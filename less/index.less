@@ -9,10 +9,23 @@ max-width: 100%;
 vertical-align: baseline;
 text-align: center;
 }
+@import url('https://fonts.googleapis.com/css?family=Bangers|Titillium+Web')
+
+@mainFont: "Titillium Web", sans-serif;
+@sideFont: "Bangers", cursive;
+@color: black;
+
+//Mixins
+@mixin stick{
+  flex-direction: column
+}
+@mixin F{
+  display: flex;
+}
 
 html {
 font-size: 62.5%;
-font-family: "Titillium Web", sans-serif;
+font-family: @mainFont
 }
 
 body {
@@ -24,7 +37,7 @@ h2,
 h3,
 h4,
 h5 {
-font-family: "Bangers", cursive;
+font-family: @sideFont
 letter-spacing: 1px;
 margin-bottom: 15px;
 }
@@ -34,8 +47,20 @@ margin-bottom: 15px;
 
 
 header {
-  display: flex;
-  flex-direction: column;
+  @include F;
+  @include stick;
+
+  nav {
+    width: 100%;
+    @include F;
+    justify-content: flex-end;
+
+    a {
+      margin: 1%;
+      padding: 0 auto;
+      }//closes nav a
+
+  }//closes nav
 
   .box {
     background: rgb(170, 168, 168);
@@ -50,27 +75,35 @@ header {
     }//closes box button
 
   }// closes box
+  
+  @media(max-width: 500px){
+    nav {
+      @include stick;
 
+      a{
+        padding: 1% 0;
+        border-bottom: 1px solid @color;
+      }//closes 500px a
 
+    }//closes 500px nav
 
+    .box{
+     width:100%;
+     margin: 0 auto;
 
-  nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+     img{
+       height: 65vh;
+     }//closes 500px box img
 
-    a {
-      margin: 1%;
-      padding: 0 auto;
-    }//closes nav a
+    }//closes 500px box
 
-  }//closes nav
-
+  }//closes 500px header
+  
 }//closes header DONT TOUCH
 
 
 .mid {
-  display: flex;
+  @include F;
   justify-content: center;
   margin:4% 15%;
 
@@ -82,24 +115,60 @@ header {
     width: 30%;
   }//closes mid learn
 
+ @media(max-width: 500px){
+  @include stick;
+
+   .about{
+   width:90%;
+   margin: 5% auto;
+   }//closes 500px about
+
+   .learn{
+    width:90%;
+    margin: 5% auto;
+   }//closes 500px learn
+
+ }//closes 500px mid
+
 }//closes mid
 
 .work{
   margin: 5% 20%;
   padding: 5% 0;
-  background:black;
+  background: @color;
   color:white;
+
+  @media(max-width: 500px){
+    width: 100%;
+    margin: 0 auto;
+  }//closes 500px work
+
 }//closes work
 
 .contact{
   font-size: 2.5rem;
+
   .conDiv{
-    display:flex;
+    @include F;
     justify-content: space-around;
     margin: 0 20%;
     padding: 5%;
     font-size: 2.3rem; 
   }//closes conDiv
+
+  @media(max-width: 500px){
+    margin-top: 10%;
+    
+    .conDiv{
+      @include stick;
+      margin-top: -10%;
+
+      div{
+      margin: 4% auto;
+      }//closes 500px conDiv div
+    }//closes 500px conDiv
+
+  }//closes 500px contact
 
 }//closes contact
 

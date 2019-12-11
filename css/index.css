@@ -28,6 +28,15 @@ header {
   display: flex;
   flex-direction: column;
 }
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav a {
+  margin: 1%;
+  padding: 0 auto;
+}
 header .box {
   background: #aaa8a8;
   margin: 0 20%;
@@ -38,14 +47,21 @@ header .box img {
 header .box .button {
   padding: 1%;
 }
-header nav {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-header nav a {
-  margin: 1%;
-  padding: 0 auto;
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+  }
+  header nav a {
+    padding: 1% 0;
+    border-bottom: 1px solid black;
+  }
+  header .box {
+    width: 100%;
+    margin: 0 auto;
+  }
+  header .box img {
+    height: 65vh;
+  }
 }
 .mid {
   display: flex;
@@ -58,11 +74,30 @@ header nav a {
 .mid .learn {
   width: 30%;
 }
+@media (max-width: 500px) {
+  .mid {
+    flex-direction: column;
+  }
+  .mid .about {
+    width: 90%;
+    margin: 5% auto;
+  }
+  .mid .learn {
+    width: 90%;
+    margin: 5% auto;
+  }
+}
 .work {
   margin: 5% 20%;
   padding: 5% 0;
   background: black;
   color: white;
+}
+@media (max-width: 500px) {
+  .work {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 .contact {
   font-size: 2.5rem;
@@ -73,6 +108,18 @@ header nav a {
   margin: 0 20%;
   padding: 5%;
   font-size: 2.3rem;
+}
+@media (max-width: 500px) {
+  .contact {
+    margin-top: 10%;
+  }
+  .contact .conDiv {
+    flex-direction: column;
+    margin-top: -10%;
+  }
+  .contact .conDiv div {
+    margin: 4% auto;
+  }
 }
 footer {
   margin: 5%;
