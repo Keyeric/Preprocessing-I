@@ -1,59 +1,177 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* Universal Selector Reset */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+border: 0;
+max-width: 100%;
+vertical-align: baseline;
+text-align: center;
+}
+@import url('https://fonts.googleapis.com/css?family=Bangers|Titillium+Web')
+
+@mainFont: "Titillium Web", sans-serif;
+@sideFont: "Bangers", cursive;
+@color: black;
+
+//Mixins
+@mixin stick{
+  flex-direction: column
+}
+@mixin F{
+  display: flex;
 }
 
-html, body {
-    height: 100%;
+html {
+font-size: 62.5%;
+font-family: @mainFont
 }
 
+body {
+font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+font-family: @sideFont
+letter-spacing: 1px;
+margin-bottom: 15px;
+}
+
+
+//Styling starts here
+
+
+header {
+  @include F;
+  @include stick;
+
+  nav {
+    width: 100%;
+    @include F;
+    justify-content: flex-end;
+
+    a {
+      margin: 1%;
+      padding: 0 auto;
+      }//closes nav a
+
+  }//closes nav
+
+  .box {
+    background: rgb(170, 168, 168);
+    margin: 0 20%;
+
+    img {
+      height: 40vh;
+    }//closes box img
+
+    .button {
+      padding: 1%;
+    }//closes box button
+
+  }// closes box
+  
+  @media(max-width: 500px){
+    nav {
+      @include stick;
+
+      a{
+        padding: 1% 0;
+        border-bottom: 1px solid @color;
+      }//closes 500px a
+
+    }//closes 500px nav
+
+    .box{
+     width:100%;
+     margin: 0 auto;
+
+     img{
+       height: 65vh;
+     }//closes 500px box img
+
+    }//closes 500px box
+
+  }//closes 500px header
+  
+}//closes header DONT TOUCH
+
+
+.mid {
+  @include F;
+  justify-content: center;
+  margin:4% 15%;
+
+  .about {
+    width: 55%;
+  }//closes mid about
+
+  .learn {
+    width: 30%;
+  }//closes mid learn
+
+ @media(max-width: 500px){
+  @include stick;
+
+   .about{
+   width:90%;
+   margin: 5% auto;
+   }//closes 500px about
+
+   .learn{
+    width:90%;
+    margin: 5% auto;
+   }//closes 500px learn
+
+ }//closes 500px mid
+
+}//closes mid
+
+.work{
+  margin: 5% 20%;
+  padding: 5% 0;
+  background: @color;
+  color:white;
+
+  @media(max-width: 500px){
+    width: 100%;
+    margin: 0 auto;
+  }//closes 500px work
+
+}//closes work
+
+.contact{
+  font-size: 2.5rem;
+
+  .conDiv{
+    @include F;
+    justify-content: space-around;
+    margin: 0 20%;
+    padding: 5%;
+    font-size: 2.3rem; 
+  }//closes conDiv
+
+  @media(max-width: 500px){
+    margin-top: 10%;
+    
+    .conDiv{
+      @include stick;
+      margin-top: -10%;
+
+      div{
+      margin: 4% auto;
+      }//closes 500px conDiv div
+    }//closes 500px conDiv
+
+  }//closes 500px contact
+
+}//closes contact
+
+footer{
+  margin: 5%;
+}//closes footer

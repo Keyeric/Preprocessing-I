@@ -1,1 +1,126 @@
-/* Compile your LESS file! */
+/* Universal Selector Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+  text-align: center;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Titillium Web", sans-serif;
+}
+body {
+  font-size: 1.6rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav a {
+  margin: 1%;
+  padding: 0 auto;
+}
+header .box {
+  background: #aaa8a8;
+  margin: 0 20%;
+}
+header .box img {
+  height: 40vh;
+}
+header .box .button {
+  padding: 1%;
+}
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+  }
+  header nav a {
+    padding: 1% 0;
+    border-bottom: 1px solid black;
+  }
+  header .box {
+    width: 100%;
+    margin: 0 auto;
+  }
+  header .box img {
+    height: 65vh;
+  }
+}
+.mid {
+  display: flex;
+  justify-content: center;
+  margin: 4% 15%;
+}
+.mid .about {
+  width: 55%;
+}
+.mid .learn {
+  width: 30%;
+}
+@media (max-width: 500px) {
+  .mid {
+    flex-direction: column;
+  }
+  .mid .about {
+    width: 90%;
+    margin: 5% auto;
+  }
+  .mid .learn {
+    width: 90%;
+    margin: 5% auto;
+  }
+}
+.work {
+  margin: 5% 20%;
+  padding: 5% 0;
+  background: black;
+  color: white;
+}
+@media (max-width: 500px) {
+  .work {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.contact {
+  font-size: 2.5rem;
+}
+.contact .conDiv {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20%;
+  padding: 5%;
+  font-size: 2.3rem;
+}
+@media (max-width: 500px) {
+  .contact {
+    margin-top: 10%;
+  }
+  .contact .conDiv {
+    flex-direction: column;
+    margin-top: -10%;
+  }
+  .contact .conDiv div {
+    margin: 4% auto;
+  }
+}
+footer {
+  margin: 5%;
+}
