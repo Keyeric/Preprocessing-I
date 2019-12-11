@@ -25,19 +25,17 @@ h5 {
   margin-bottom: 15px;
 }
 header {
-  border: 10px dotted red;
   display: flex;
   flex-direction: column;
 }
 header .box {
-  border: 10px solid blue;
   background: #aaa8a8;
   margin: 0 20%;
 }
 header .box img {
   height: 40vh;
 }
-header .button {
+header .box .button {
   padding: 1%;
 }
 header nav {
@@ -46,7 +44,23 @@ header nav {
   justify-content: flex-end;
 }
 header nav a {
-  border: 5px solid orangered;
   margin: 1%;
   padding: 0 auto;
+}
+.mid {
+  display: flex;
+  justify-content: center;
+  margin: 4% 15%;
+}
+.mid .about {
+  width: 55%;
+}
+.mid .learn {
+  width: 30%;
+}
+.work {
+  margin: 5% 20%;
+  padding: 5% 0;
+  background: black;
+  color: white;
 }
