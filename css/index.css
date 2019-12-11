@@ -1,1 +1,27 @@
-/* Compile your LESS file! */
+/* Universal Selector Reset */
+* {
+  box-sizing: border-box;
+  padding: 0 auto;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  max-width: 100%;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-align: center;
+}
+html,
+body {
+  font-size: 62.5%;
+  height: 100%;
+  font-family: "Titillium Web", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
