@@ -24,3 +24,29 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 15px;
 }
+header {
+  border: 10px dotted red;
+  display: flex;
+  flex-direction: column;
+}
+header .box {
+  border: 10px solid blue;
+  background: #aaa8a8;
+  margin: 0 20%;
+}
+header .box img {
+  height: 40vh;
+}
+header .button {
+  padding: 1%;
+}
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav a {
+  border: 5px solid orangered;
+  margin: 1%;
+  padding: 0 auto;
+}
