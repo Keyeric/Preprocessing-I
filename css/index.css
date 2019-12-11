@@ -64,3 +64,16 @@ header nav a {
   background: black;
   color: white;
 }
+.contact {
+  font-size: 2.5rem;
+}
+.contact .conDiv {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20%;
+  padding: 5%;
+  font-size: 2.3rem;
+}
+footer {
+  margin: 5%;
+}
