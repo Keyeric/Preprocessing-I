@@ -9,23 +9,23 @@ max-width: 100%;
 vertical-align: baseline;
 text-align: center;
 }
-@import url('https://fonts.googleapis.com/css?family=Bangers|Titillium+Web')
+@import url('https://fonts.googleapis.com/css?family=Bangers|Titillium+Web');
 
 @mainFont: "Titillium Web", sans-serif;
 @sideFont: "Bangers", cursive;
 @color: black;
 
 //Mixins
-@mixin stick{
-  flex-direction: column
+.stick{
+  flex-direction: column;
 }
-@mixin F{
+.F{
   display: flex;
 }
 
 html {
 font-size: 62.5%;
-font-family: @mainFont
+font-family: @mainFont;
 }
 
 body {
@@ -37,7 +37,7 @@ h2,
 h3,
 h4,
 h5 {
-font-family: @sideFont
+font-family: @sideFont;
 letter-spacing: 1px;
 margin-bottom: 15px;
 }
@@ -47,12 +47,12 @@ margin-bottom: 15px;
 
 
 header {
-  @include F;
-  @include stick;
+  .F();
+  .stick();
 
   nav {
     width: 100%;
-    @include F;
+    .F();
     justify-content: flex-end;
 
     a {
@@ -78,7 +78,7 @@ header {
   
   @media(max-width: 500px){
     nav {
-      @include stick;
+      .stick();
 
       a{
         padding: 1% 0;
@@ -103,7 +103,7 @@ header {
 
 
 .mid {
-  @include F;
+  .F();
   justify-content: center;
   margin:4% 15%;
 
@@ -116,7 +116,7 @@ header {
   }//closes mid learn
 
  @media(max-width: 500px){
-  @include stick;
+  .stick();
 
    .about{
    width:90%;
@@ -149,7 +149,7 @@ header {
   font-size: 2.5rem;
 
   .conDiv{
-    @include F;
+    .F();
     justify-content: space-around;
     margin: 0 20%;
     padding: 5%;
@@ -160,7 +160,7 @@ header {
     margin-top: 10%;
     
     .conDiv{
-      @include stick;
+      .stick();
       margin-top: -10%;
 
       div{
@@ -174,4 +174,4 @@ header {
 
 footer{
   margin: 5%;
-}//closes footer
+}//closes footerf
